@@ -1,0 +1,7 @@
+<h2>Add Student </h2>
+
+
+<%= form_with url: "/create_student", method: :post do |form| %>
+  <%= form.text_field :email %>
+  <%= form.submit %>
+<% end %>
