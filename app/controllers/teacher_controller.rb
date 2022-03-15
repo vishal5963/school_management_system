@@ -12,10 +12,10 @@ class TeacherController < ApplicationController
       @student.password = params[:email].split("@")[0]+"123"
       @student.role_id = 1
       @student.teacher_id = current_user.id
-p @student
+      p @student
     respond_to do |format|
     if @student.save
-      format.html { redirect_to root_path, notice: 'Health official was successfully created.' }
+      format.html { redirect_to users_authenticated_root_path, notice: 'Student was successfully created.' }
       #format.json { render :show, status: :created, location: @student }
     else
       p @student.errors

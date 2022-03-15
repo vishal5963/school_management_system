@@ -5,4 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def students
+    self.class.where(teacher_id: id)
+  end
 end

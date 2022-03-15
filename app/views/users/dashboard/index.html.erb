@@ -1,5 +1,13 @@
 <h1>Users::Dashboard#index</h1>
 <p>Find me in app/views/users/dashboard/index.html.erb</p>
-<%= link_to add_student_path do %>
-      <span>Add Student</span>
+<% if current_user.role_id.nil? || current_user.role_id == 2 %>
+  <%= link_to add_student_path do %>
+        <span>Add Student</span>
+  <% end %>
 <% end %>
+<h4>Student List</h4>
+<ul>
+  <% current_user.students.each do |student| %>
+    <li> <%= student.email %> </li>
+  <% end %>
+</ul>

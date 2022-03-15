@@ -1,0 +1,8 @@
+<!-- <h1>Teacher#add_student</h1>
+<p>Find me in app/views/teacher/add_student.html.erb</p> -->
+<br><br>
+<p style="color:red"><%= @user.errors.full_messages if @user.errors.any? %></p>
+<%= form_for :user, url: teacher_create_student_path do |f| %>
+  <%= f.label :email, "Student's email:" %><br> <%= f.text_field :email %><br>
+  <%= f.submit %>
+<% end %>
