@@ -1,8 +1,20 @@
 <!-- <h1>Teacher#add_student</h1>
 <p>Find me in app/views/teacher/add_student.html.erb</p> -->
-<br><br>
-<p style="color:red"><%= @user.errors.full_messages if @user.errors.any? %></p>
-<%= form_for :user, url: teacher_create_student_path do |f| %>
-  <%= f.label :email, "Student's email:" %><br> <%= f.text_field :email %><br>
-  <%= f.submit %>
-<% end %>
+<!-- <br><br> -->
+
+<div class="col-md-4 offset-md-4">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Log in</h3>
+    </div>
+    <p style="color:red"><%= @user.errors.full_messages if @user.errors.any? %></p>
+    <%= form_for :user, url: teacher_create_student_path do |f| %>
+      <div class="card-body">
+        <div class="form-group">
+          <%= f.label :email, "Student's email:" %><br> <%= f.text_field :email, class: "form-control" %><br>
+        </div>
+      </div>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<%= form_with(model: users_video, local: true) do |form| %>
+  <% if users_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(users_video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% users_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card-body">
+    <div class="form-group">
+      <%= form.label :video %>
+      <%= form.file_field :video %>
+    </div>
+  </div>
+
+  <!-- <div class="field"> -->
+    <%#= form.label :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%#= form.label :is_deleted %>
+    <%#= form.check_box :is_deleted %>
+  <!-- </div> -->
+
+  <!-- <div class="field"> -->
+    <%#= form.label :is_downloadable %>
+    <%#= form.check_box :is_downloadable %>
+  <!-- </div> -->
+
+  <div class="card-footer">
+    <%= form.submit "Upload", class: "btn btn-primary" %>
+    <%= link_to 'Back', back_path %>
+  </div>
+<% end %>

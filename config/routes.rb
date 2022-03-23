@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'welcome/index'
 
   namespace :admins do
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
     authenticated :user do
       namespace :users do
         get 'dashboard/index', as: :authenticated_root
+        resources :videos do
+          get 'download_video'
+        end
       end
     end
   end

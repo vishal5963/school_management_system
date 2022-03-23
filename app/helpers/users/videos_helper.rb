@@ -1,0 +1,2 @@
+module Users::VideosHelper
+end
