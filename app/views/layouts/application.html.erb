@@ -4,23 +4,39 @@
     <title>SchoolManagementSystem</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% if user_signed_in? %>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> |
-      <% elsif !admin_signed_in? %>
-        <%= link_to "Sign In", new_user_session_path %> |
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+      <% if user_signed_in? %>
+        <%= render  'layouts/header' %>
+        <%= render  'layouts/sidebar' %>
       <% end %>
+      <div class="content-wrapper">
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
 
-      <% if admin_signed_in? %>
-        <%= link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete %> |
-      <% elsif !user_signed_in? %>
-        <%= link_to "Sign In as Admin", new_admin_session_path %> |
-      <% end %>
-    <%= yield %>
+              <%# if user_signed_in? %>
+              <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              <%# elsif !admin_signed_in? %>
+              <%#= link_to "Sign In", new_user_session_path %>
+              <%# end %>
+
+              <%# if admin_signed_in? %>
+              <%#= link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete %>
+              <%# elsif !user_signed_in? %>
+              <%#= link_to "Sign In as Admin", new_admin_session_path %>
+              <%# end %>
+              <%= yield %>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
