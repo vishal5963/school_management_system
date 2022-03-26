@@ -3,7 +3,7 @@ class Users::VideosController < ApplicationController
 
   # GET /users/videos or /users/videos.json
   def index
-    @users_videos = Users::Video.all
+    @users_videos = Users::Video.where(user_id: current_user.id)
   end
 
   # GET /users/videos/1 or /users/videos/1.json
