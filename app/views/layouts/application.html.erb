@@ -16,7 +16,7 @@
         <%= render  'layouts/header' %>
         <%= render  'layouts/sidebar' %>
       <% end %>
-      <div class="content-wrapper">
+      <div class="content-wrapper" style="<%= user_signed_in? ? '' : 'margin-left:0px !important' %>">
         <section class="content">
           <div class="container-fluid">
             <div class="row">
