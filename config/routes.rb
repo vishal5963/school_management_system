@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get 'add_student', to: 'teacher#new_student'
   post 'create_student', to: 'teacher#create_student'
+  get 'students', to: 'teacher#students'
 
 
 end

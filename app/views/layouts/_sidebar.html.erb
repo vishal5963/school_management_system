@@ -20,13 +20,20 @@
         <ul class="nav nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <%= link_to users_authenticated_root_path, class: "nav-link" do  %>
-              <i class="far fa-circle nav-icon"></i>
+              <!-- <i class="far fa-circle nav-icon"></i> -->
+              <%= fa_icon "circle nav-icon" %>
               <p>Dashboard</p>
             <% end %>
           </li>
           <li class="nav-item">
+            <%= link_to students_path, class: "nav-link" do  %>
+              <%= fa_icon "circle nav-icon" %>
+              <p>Students</p>
+            <% end %>
+          </li>
+          <li class="nav-item">
             <%= link_to users_videos_path, class: "nav-link" do  %>
-              <i class="far fa-circle nav-icon"></i>
+              <%= fa_icon "circle nav-icon" %>
               <p>Videos</p>
             <% end %>
           </li>

@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def students
     self.class.where(teacher_id: id)
   end
+
+  def is_teacher?
+    teacher_id.nil?
+  end
 end

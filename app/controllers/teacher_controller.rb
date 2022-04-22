@@ -4,6 +4,10 @@ class TeacherController < ApplicationController
     @student = User.new
   end
 
+  def students
+    @students = current_user.students if current_user.is_teacher?
+  end
+
 
   def create_student
 

@@ -1,0 +1,30 @@
+<% if current_user.role_id.nil? || current_user.role_id == 2 %>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">List of Student</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Student List
+                <%= link_to add_student_path, class: 'float-right' do %>
+                      <span>Add Student</span>
+                <% end %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @students.each do |student| %>
+              <tr>
+                <td><%= student.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+  </div>
+<% end %>

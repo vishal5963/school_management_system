@@ -4,6 +4,8 @@
     <title>SchoolManagementSystem</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/adminlte.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +21,7 @@
       <div class="content-wrapper" style="<%= user_signed_in? ? '' : 'margin-left:0px !important' %>">
         <section class="content">
           <div class="container-fluid">
-            <div class="row">
+            <!-- <div class="row"> -->
 
               <%# if user_signed_in? %>
               <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
@@ -33,7 +35,7 @@
               <%#= link_to "Sign In as Admin", new_admin_session_path %>
               <%# end %>
               <%= yield %>
-            </div>
+            <!-- </div> -->
           </div>
         </section>
       </div>
