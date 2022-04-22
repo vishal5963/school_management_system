@@ -25,12 +25,14 @@
               <p>Dashboard</p>
             <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to students_path, class: "nav-link" do  %>
-              <%= fa_icon "circle nav-icon" %>
-              <p>Students</p>
-            <% end %>
-          </li>
+          <% if current_user.role_id.nil? || current_user.role_id == 2 %>
+            <li class="nav-item">
+              <%= link_to students_path, class: "nav-link" do  %>
+                <%= fa_icon "circle nav-icon" %>
+                <p>Students</p>
+              <% end %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to users_videos_path, class: "nav-link" do  %>
               <%= fa_icon "circle nav-icon" %>
